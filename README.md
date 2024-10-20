@@ -15,9 +15,6 @@ O código `main.tf` realiza as seguintes operações:
 - **Instância EC2**: Cria uma instância EC2 utilizando uma AMI do Debian 12, do tipo `t2.micro`.
 - **Outputs**: Exibe a chave privada gerada e o endereço IP público da instância.
 
-![Resumo da Instância EC2](imagens/ec2-instance-summary.png)
-
-
 ### ○ Observações
 - A configuração de segurança permitia tráfego SSH e HTTP de qualquer origem, o que poderia ser melhorado para restringir o acesso.
 - A instalação do Nginx não era automatizada, exigindo configuração manual na instância após a criação.
@@ -94,6 +91,7 @@ Para executar este projeto, eu precisei garantir que alguns pré-requisitos esti
      ```bash
      ssh -i my-key.pem admin@<EC2_PUBLIC_IP>
      ```
+    ![Resumo da Instância EC2](imagens/ec2-instance-summary.png)
 
 3. **Verificação do Status do Nginx**:
    - Após a conexão, verifiquei se o Nginx estava ativo e em execução com:
@@ -134,3 +132,7 @@ Os arquivos do projeto estão disponíveis no repositório GitHub. Eles incluem:
 
 - `main.tf`: O arquivo Terraform que define toda a infraestrutura, com as melhorias de segurança e automação implementadas.
 - `index.nginx-debian.html`: O arquivo HTML personalizado que foi configurado na instância EC2 para exibir a mensagem do desafio.
+
+## Autor 
+
+Esse projeto foi desenvolvido por Ingrid Lauanne Leite dos Santos.
